@@ -36,6 +36,7 @@ function refresh(){
   document.querySelector('.refresh').style.display = 'none'
   document.querySelector('.sjekk-svar').style.display = 'block'
   svarSjekket = false;
+  resetFocus();
   if(symbol === '+'){
     document.querySelector('.regneart').innerHTML = 'Addition'
   } else if(symbol === '-'){
