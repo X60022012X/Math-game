@@ -1,7 +1,7 @@
 header {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #646478;
 }
 
 nav2 {
@@ -13,7 +13,7 @@ nav2 {
 
 nav2 button{
   padding: 18px 30px 18px 30px;
-  background-color: black;
+  background-color: #646478;
   font-size: 16px;
   color: white;
   border-radius: 0;

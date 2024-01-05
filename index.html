@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="scripts/nav-bar.js">
 </head>
 <body>
+  <div class="title-box">
+    <p class="title">Mattespill</p>
+  </div>
   <header>
     <nav1>
       <i class="fa-solid fa-bars"></i>
@@ -28,9 +31,6 @@
     </nav2>
   </header>
   <main>
-    <div class="title-box">
-      <p class="title">Mattespill</p>
-    </div>
     <section>
       <p class="regneart">Multiplication</p>
       <p class="regnestykke">Regnestykke</p>
@@ -39,16 +39,26 @@
         <button class="sjekk-svar" onclick="sjekkSvar()">Check Answer</button>
         <button class="refresh" onclick="refresh()">Refresh</button>
       </div>
-      <p class="score-title">Score</p>
-      <p class="highscore">Highscore: 0</p>
-      <p class="score">Score: 0</p>
-      <button class="resetHighscore" onclick="resetHighscore()">Reset highscore</button>
-      <p class="level-title">Level</p>
-      <div class="level-container">
-        <button class="levelDown" onclick="if(level > 1){level--}; changeLevel()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
-        <p class="level">Level: 1</p>
-        <button class="levelUp" onclick="if(level < 6){level++}; changeLevel()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
-      </div>
+      <article>
+        <colum>
+          <p class="score-title">Score</p>
+          <p class="highscore">Highscore: 0</p>
+          <p class="score">Score: 0</p>
+          <button class="resetHighscore" onclick="resetHighscore()">Reset highscore</button>
+        </colum>
+        <colum>
+          <div class="divider">
+          </div>
+        </colum>
+        <colum>
+          <p class="level-title">Level</p>
+          <div class="level-container">
+            <button class="levelDown" onclick="if(level > 1){level--}; changeLevel()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
+            <p class="level">Level: 1</p>
+            <button class="levelUp" onclick="if(level < 6){level++}; changeLevel()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
+          </div>
+        </colum>
+    </article>
     </section>
   </main>
   <script src="./scripts/nav-bar.js"></script>

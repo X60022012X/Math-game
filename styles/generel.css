@@ -20,7 +20,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #969696;
+  border-bottom: rgb(77, 77, 77) 1px solid;
 }
 
 .title {
@@ -98,7 +98,7 @@ section {
 .level-title{
   font-size: 24px;
   font-weight: bold;
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 15px;
 }
 
@@ -121,6 +121,27 @@ section {
 .levelIcon{
   margin-top: 7px;
 }
+
+article{
+  display: flex;
+  flex-direction: row;
+  column-gap: 80px;
+  margin-left: 40px;
+}
+
+colum{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divider{
+  background-color: #000000;
+  margin-top: 80px;
+  width: 1px;
+  height: 150px;
+}
+
 @media(max-width: 500px){
   .answer-line {
     flex-direction: column;
@@ -153,4 +174,20 @@ section {
     border-radius: 3px;
   }
   
+  article{
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .score-title {
+    margin-top: 50px;
+  }
+  
+  .level-title{
+    margin-top: 40px;
+  }
+
+  .divider{
+    display: none;
+  }
 }
