@@ -43,6 +43,12 @@
       <p class="highscore">Highscore: 0</p>
       <p class="score">Score: 0</p>
       <button class="resetHighscore" onclick="resetHighscore()">Reset highscore</button>
+      <p class="level-title">Level</p>
+      <div class="level-container">
+        <button class="levelDown" onclick="if(level > 1){level--}; changeLevel()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
+        <p class="level">Level: 1</p>
+        <button class="levelUp" onclick="if(level < 6){level++}; changeLevel()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
+      </div>
     </section>
   </main>
   <script src="./scripts/nav-bar.js"></script>

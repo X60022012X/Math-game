@@ -2,9 +2,14 @@ let brukerSvar = 0;
 let faktiskSvar = 0;
 let number1 = 0;
 let number2 = 0;
+let number3 = 0;
+let number4 = 0;
 let score = 0;
 let symbol = '*';
 let svarSjekket = false;
+let level = 1;
+let numberSize = 10;
+let numberAmount = 2;
 
 let highscore = 0
 if (!localStorage.highscore){
@@ -25,16 +30,30 @@ function activateByEnter(event) {
 }
 
 function refresh(){
-  number1 = Math.ceil(Math.random()*10);
-  number2 = Math.ceil(Math.random()*10);
-  faktiskSvar = Number((eval(number1 + symbol + number2)).toFixed(1));
-  console.log(faktiskSvar)
-  document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} = ?`
+  checkLevel();
+  number1 = Math.ceil(Math.random()*numberSize);
+  number2 = Math.ceil(Math.random()*numberSize);
+  number3 = Math.ceil(Math.random()*numberSize);
+  number4 = Math.ceil(Math.random()*numberSize);
+  if(numberAmount == 2){
+    faktiskSvar = Number((eval(number1 + symbol + number2)).toFixed(1));
+    document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} = ?`
+    console.log('2 tall')
+  } else if(numberAmount == 3){
+    faktiskSvar = Number((eval(number1 + symbol + number2 + symbol + number3)).toFixed(1));
+    document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} ${symbol} ${number3} = ?`
+    console.log('3 tall')
+  } else if(numberAmount == 4){
+    faktiskSvar = Number((eval(number1 + symbol + number2 + symbol + number3 + symbol + number4)).toFixed(1));
+    document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} ${symbol} ${number3} ${symbol} ${number4} = ?`
+    console.log('4 tall')
+  }
   document.querySelector('body').style.background = 'white'
   document.querySelector('.title-box').style.background = 'rgb(100, 100, 120)'
   document.querySelector('input').value = ''
   document.querySelector('.refresh').style.display = 'none'
   document.querySelector('.sjekk-svar').style.display = 'block'
+  console.log(faktiskSvar)
   svarSjekket = false;
   resetFocus();
   if(symbol === '+'){
@@ -94,4 +113,31 @@ function resetHighscore(){
   localStorage.highscore = 0;
   highscore = Number(localStorage.highscore)
   document.querySelector('.highscore').innerHTML = `Highscore: ${highscore}`
+}
+
+function changeLevel(){
+  document.querySelector('.level').innerHTML = `Level: ${level}`
+  refresh();
+}
+
+function checkLevel(){
+  if(level === 1){
+    numberSize = 10; 
+    numberAmount = 2;
+  }else if(level === 2){
+    numberSize = 100;
+    numberAmount = 2;
+  }else if(level === 3){
+    numberSize = 10;
+    numberAmount = 3;
+  }else if(level === 4){
+    numberSize = 100;
+    numberAmount = 3;
+  }else if(level === 5){
+    numberSize = 10;
+    numberAmount = 4;
+  }else if(level === 6){
+    numberSize = 100;
+    numberAmount = 4;
+  }
 }
