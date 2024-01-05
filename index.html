@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Math game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/nav-bar.css">
+  <link rel="stylesheet" href="styles/generel.css">
+  <link rel="stylesheet" href="scripts/nav-bar.js">
+</head>
+<body>
+  <header>
+    <nav1>
+      <i class="fa-solid fa-bars"></i>
+    </nav1>
+    <nav2>
+      <button class="nav-option" onclick="symbol = '+'; refresh()">
+        <i class="fa-solid fa-plus fa-xl"></i>
+      </button>
+      <button class="nav-option" onclick="symbol = '-'; refresh()">
+        <i class="fa-solid fa-minus fa-xl"></i>
+      </button>
+      <button class="nav-option" onclick="symbol = '*'; refresh()">
+        <i class="fa-solid fa-xmark fa-xl"></i>
+      </button>
+      <button class="nav-option" onclick="symbol = '/'; refresh()">
+        <i class="fa-solid fa-divide fa-xl"></i>
+      </button>
+    </nav2>
+  </header>
+  <main>
+    <div class="title-box">
+      <p class="title">Mattespill</p>
+    </div>
+    <section>
+      <p class="regneart">Multiplication</p>
+      <p class="regnestykke">Regnestykke</p>
+      <div class="answer-line">
+        <input class="input" placeholder="Enter your answer" onkeydown="activateByEnter(event)">
+        <button class="sjekk-svar" onclick="sjekkSvar()">Check Answer</button>
+        <button class="refresh" onclick="refresh(); resetFocus();">Refresh</button>
+      </div>
+      <p class="score-title">Score</p>
+      <p class="highscore">Highscore: 0</p>
+      <p class="score">Score: 0</p>
+      <button class="resetHighscore" onclick="resetHighscore()">Reset highscore</button>
+    </section>
+  </main>
+  <script src="./scripts/nav-bar.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

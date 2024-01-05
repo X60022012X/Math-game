@@ -1,0 +1,70 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+nav2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  column-gap: 10vw;
+}
+
+nav2 button{
+  padding: 18px 30px 18px 30px;
+  background-color: black;
+  font-size: 16px;
+  color: white;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+}
+
+nav2 button:active {
+  background-color: rgb(200, 0, 0);
+  color: black;
+}
+
+.fa-bars{
+  color: white;
+  font-size: 30px;
+  padding: 12.25px 20px;
+  display: none;
+  cursor: pointer;
+}
+
+@media(max-width: 500px){
+
+  header{
+  flex-direction: column;
+  }
+
+  nav1{
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px solid gray;
+    width: 100%;
+  }
+
+  nav2 {
+    display: none;
+  }
+
+  header nav2.show {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+
+  .fa-bars {
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-bars:active {
+    background-color: rgb(200, 0, 0);
+  }
+}

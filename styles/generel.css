@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #969696;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.regneart {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.regnestykke {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.answer-line {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.input {
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.sjekk-svar {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4cc350;
+  color: white;
+  cursor: pointer;
+  border: rgb(32, 97, 2) solid 2px;
+  border-radius: 3px;
+}
+
+.refresh {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #7c7c7c;
+  color: white;
+  cursor: pointer;
+  display: none;
+  border: rgb(73, 73, 73) solid 2px;
+  border-radius: 3px;
+}
+
+.score-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.score {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.resetHighscore{
+  padding: 3px 5px;
+  border: 1px black solid;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@media(max-width: 500px){
+  .answer-line {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  .input {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  
+  .sjekk-svar {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #4cc350;
+    color: white;
+    cursor: pointer;
+    border: rgb(32, 97, 2) solid 2px;
+    border-radius: 3px;
+  }
+  
+  .refresh {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #7c7c7c;
+    color: white;
+    cursor: pointer;
+    display: none;
+    border: rgb(73, 73, 73) solid 2px;
+    border-radius: 3px;
+  }
+  
+}
