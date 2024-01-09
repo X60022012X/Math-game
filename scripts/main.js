@@ -11,6 +11,7 @@ let level = 1;
 let numberSize = 10;
 let numberAmount = 2;
 let difficulity = 'Practice';
+let calculation = "";
 
 let highscore = 0
 if (!localStorage.highscore){
