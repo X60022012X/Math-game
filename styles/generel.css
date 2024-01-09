@@ -110,13 +110,22 @@ colum {
   font-weight: 500;
 }
 
+.resetHighscore:hover {
+  background-color: rgb(191, 191, 191);
+}
+
+.resetHighscore:active {
+  background-color: rgb(134, 134, 134);
+}
+
+
 .level-title{
   font-size: 29px;
   font-weight: 500;
   margin-top: 50px;
 }
 
-.level-container{
+.level-container {
   display: flex;
   align-items: center;
 }
@@ -128,10 +137,18 @@ colum {
   font-weight: 500;
 }
 
-.levelDown, .levelUp{
+.levelDown, .levelUp {
   border: solid black;
   padding: 3px 3.8px 2.1px 3.8px;
   border-radius: 15.75px;
+}
+
+.levelDown:hover, .levelUp:hover {
+  background-color: rgb(191, 191, 191);
+}
+
+.levelDown:active, .levelUp:active {
+  background-color: rgb(134, 134, 134);
 }
 
 .levelIcon{
@@ -152,6 +169,13 @@ colum {
   font-weight: 500;
 }
 
+.resetDifficulity:hover {
+  background-color: rgb(191, 191, 191);
+}
+
+.resetDifficulity:active {
+  background-color: rgb(134, 134, 134);
+}
 
 .divider {
   width: 2px;

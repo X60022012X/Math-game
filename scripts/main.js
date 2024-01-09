@@ -88,6 +88,7 @@ function sjekkSvar(){
     svarSjekket = true;
     updateHighscore();
     score = 0;
+    noAddedScore();
     updateScore();
   }
 }
@@ -110,6 +111,7 @@ function resetHighscore(){
   localStorage.highscore = 0;
   highscore = Number(localStorage.highscore)
   document.querySelector('.highscore').innerHTML = `Highscore: ${highscore}`
+  resetFocus();
 }
 
 function changeLevel(){
@@ -146,8 +148,42 @@ function checkLevel(){
   document.querySelector('.difficulity').innerHTML = `Difficulity: ${difficulity}`
 }
 
+function levelDown() {
+  if(level > 1 ){
+    level--;
+    changeLevel();
+  }else{
+    resetFocus();
+  }
+}
+
+function levelUp() {
+  if(level < 6 ){
+    level++;
+    changeLevel();
+  } else{
+    resetFocus();
+  }
+}
+
+function resetDifficulity(){
+  if(level != 1){
+    level = 1;
+    changeLevel()
+  } else{
+    resetFocus();
+  }
+}
+
 function addedScore(){
   document.querySelector('.added-score').innerHTML = `+${level} score`;
+  document.querySelector('.score-title').style.marginTop = '24.5px'
+  document.querySelector('.divider').style.marginTop = '34.5px'
+  document.querySelector('.level-title').style.marginTop = '24.5px'
+}
+
+function noAddedScore(){
+  document.querySelector('.added-score').innerHTML = 'Score reset';
   document.querySelector('.score-title').style.marginTop = '24.5px'
   document.querySelector('.divider').style.marginTop = '34.5px'
   document.querySelector('.level-title').style.marginTop = '24.5px'

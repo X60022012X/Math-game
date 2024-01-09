@@ -74,12 +74,12 @@
           <p class="level-title">Level</p>
           <div class="horizontal-divider"></div>
           <div class="level-container">
-            <button class="levelDown" onclick="if(level > 1){level--}; changeLevel()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
+            <button class="levelDown" onclick="levelDown()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
             <p class="level">Level: 1</p>
-            <button class="levelUp" onclick="if(level < 6){level++}; changeLevel()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
+            <button class="levelUp" onclick="levelUp()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
           </div>
           <p class="difficulity">Difficulity: Intermidiet</p>
-          <button class="resetDifficulity" onclick="level = 1; changeLevel();">Reset difficulity</button>
+          <button class="resetDifficulity" onclick="resetDifficulity()">Reset difficulity</button>
         </colum>
     </article>
     </section>
