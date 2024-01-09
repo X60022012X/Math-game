@@ -56,6 +56,7 @@
 	text-align: center;
 	transition: 0.5s;
 	color: rgba(255,255,255,0.8);
+	cursor: pointer;
 }
 
 .navigation ul li a:hover .icon {
@@ -78,6 +79,7 @@
 	text-transform: uppercase;
 	font-weight: 600;
 	transform: translateY(0px);
+	cursor: pointer;
 }
 
 .navigation ul li.active a .text{

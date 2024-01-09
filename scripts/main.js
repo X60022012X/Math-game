@@ -31,6 +31,7 @@ function activateByEnter(event) {
 }
 
 function refresh(){
+  removeAddedScore();
   checkLevel();
   number1 = Math.ceil(Math.random()*numberSize);
   number2 = Math.ceil(Math.random()*numberSize);
@@ -77,7 +78,8 @@ function sjekkSvar(){
     document.querySelector('.sjekk-svar').style.display = 'none'
     document.querySelector('section').style.backgroundColor = 'rgba(24, 222, 24, 0.6)'
     svarSjekket = true;
-    score++;
+    score += level;
+    addedScore();
     updateScore();
   } else {
     document.querySelector('.refresh').style.display = 'block'
@@ -142,4 +144,18 @@ function checkLevel(){
     difficulity = 'Extreme'
   }
   document.querySelector('.difficulity').innerHTML = `Difficulity: ${difficulity}`
+}
+
+function addedScore(){
+  document.querySelector('.added-score').innerHTML = `+${level} score`;
+  document.querySelector('.score-title').style.marginTop = '24.5px'
+  document.querySelector('.divider').style.marginTop = '34.5px'
+  document.querySelector('.level-title').style.marginTop = '24.5px'
+}
+
+function removeAddedScore(){
+  document.querySelector('.added-score').innerHTML = ``
+  document.querySelector('.score-title').style.marginTop = '50px'
+  document.querySelector('.divider').style.marginTop = '60px'
+  document.querySelector('.level-title').style.marginTop = '50px'
 }

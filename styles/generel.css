@@ -40,6 +40,12 @@ section {
   margin-bottom: 20px;
 }
 
+.added-score {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
 .input {
   font-size: 20px;
   padding: 10px;
