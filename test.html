@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/nav-bar.css">
+  <link rel="stylesheet" type="text/css" href="styles/generel.css">
+  <link rel="stylesheet" type="text/css" href="styles/calculator.css">
+</head>
+<body>
+  <div class="navigation">
+		<ul>
+			<li class="list active">
+				<a onclick="symbol = '+'; refresh()">
+					<span class="icon">
+						<i class="fa-solid fa-plus fa-xm"></i>
+					</span>
+					<span class="text">Addition</span>
+				</a>
+			</li>
+			<li class="list">
+				<a onclick="symbol = '-'; refresh()">
+					<span class="icon">
+						<i class="fa-solid fa-minus fa-xm"></i>
+					</span>
+					<span class="text">Subtraction</span>
+				</a>
+			</li>
+			<li class="list">
+				<a onclick="symbol = '*'; refresh()">
+					<span class="icon">
+						<i class="fa-solid fa-xmark fa-xm"></i>
+					</span>
+					<span class="text">Multiplication</span>
+				</a>
+			</li>
+			<li class="list">
+				<a onclick="symbol = '/'; refresh()">
+					<span class="icon">
+						<i class="fa-solid fa-divide fa-xm"></i>
+					</span>
+					<span class="text">Division</span>
+				</a>
+			</li>
+			<div class="indicator"></div>
+		</ul>
+  </div>
+  <div class="container">
+  <main>
+    <section>
+      <p class="regneart">Multiplication</p>
+      <p class="regnestykke">Regnestykke</p>
+      <div class="answer-line">
+        <input class="input" placeholder="Enter your answer" onkeydown="activateByEnter(event)">
+        <button class="sjekk-svar" onclick="sjekkSvar()">Check Answer</button>
+        <button class="refresh" onclick="refresh()">Refresh</button>
+      </div>
+      <article>
+        <colum>
+          <p class="score-title">Score</p>
+          <div class="horizontal-divider"></div>
+          <p class="highscore">Highscore: 0</p>
+          <p class="score">Score: 0</p>
+          <button class="resetHighscore" onclick="resetHighscore()">Reset highscore</button>
+        </colum>
+        <colum>
+          <div class="divider">
+          </div>
+        </colum>
+        <colum>
+          <p class="level-title">Level</p>
+          <div class="horizontal-divider"></div>
+          <div class="level-container">
+            <button class="levelDown" onclick="if(level > 1){level--}; changeLevel()"><i class="fa-solid fa-minus fa-xl levelIcon"></i></button>
+            <p class="level">Level: 1</p>
+            <button class="levelUp" onclick="if(level < 6){level++}; changeLevel()"><i class="fa-solid fa-plus fa-xl levelIcon"></i></button>
+          </div>
+          <p class="difficulity">Difficulity: Intermidiet</p>
+          <button class="resetDifficulity" onclick="level = 1; changeLevel();">Reset difficulity</button>
+        </colum>
+    </article>
+    </section>
+  </main>
+  <div class="main2">
+    <div class="section">
+      <div class="answer" id="svar"></div>
+      <button class="number" style="grid-area: en;" onclick="calculation += '1'; console.log(calculation); svar.innerHTML = (calculation)">1</button>
+      <button class="number" style="grid-area: to;" onclick="calculation += '2'; console.log(calculation); svar.innerHTML = (calculation)">2</button>
+      <button class="number" style="grid-area: tre;" onclick="calculation += '3'; console.log(calculation); svar.innerHTML = (calculation)">3</button>
+      <button class="number" style="grid-area: fire;" onclick="calculation += '4'; console.log(calculation); svar.innerHTML = (calculation)">4</button>
+      <button class="number" style="grid-area: fem;" onclick="calculation += '5'; console.log(calculation); svar.innerHTML = (calculation)">5</button>
+      <button class="number" style="grid-area: seks;" onclick="calculation += '6'; console.log(calculation); svar.innerHTML = (calculation)">6</button>
+      <button class="number" style="grid-area: syv;" onclick="calculation += '7'; console.log(calculation); svar.innerHTML = (calculation)">7</button>
+      <button class="number" style="grid-area: åtte;" onclick="calculation += '8'; console.log(calculation); svar.innerHTML = (calculation)">8</button>
+      <button class="number" style="grid-area: ni;" onclick="calculation += '9'; console.log(calculation); svar.innerHTML = (calculation)">9</button>
+      <button class="number" style="grid-area: null;" onclick="calculation += '0'; console.log(calculation); svar.innerHTML = (calculation)">0</button>
+  
+      <button class="number" style="grid-area: komma;" onclick="calculation += '.'; console.log(calculation); svar.innerHTML = (calculation)">,</button>
+  
+      <button class="sign" style="grid-area: gange;" onclick="calculation += ' * '; console.log(calculation); svar.innerHTML = (calculation)">*</button>
+      <button class="sign" style="grid-area: dele;" onclick="calculation += ' / '; console.log(calculation); svar.innerHTML = (calculation)">/</button>
+      <button class="sign" style="grid-area: plus;" onclick="calculation += ' + '; console.log(calculation); svar.innerHTML = (calculation)">+</button>
+      <button class="sign" style="grid-area: minus;" onclick="calculation += ' - '; console.log(calculation); svar.innerHTML = (calculation)">-</button>
+  
+      <button class="clear" style="grid-area: pv;" onclick="calculation += ' ( '; console.log(calculation); svar.innerHTML = (calculation)">(</button>
+      <button class="clear" style="grid-area: ph;" onclick="calculation += ' ) '; console.log(calculation); svar.innerHTML = (calculation)">)</button>
+      
+      <button class="clear" style="grid-area: ac;" onclick="calculation=''; console.log(calculation); svar.innerHTML = ''">AC</button>
+      <button class="sign" style="grid-area: lik;" onclick="calculation= eval(calculation); console.log(calculation); svar.innerHTML = (calculation)">=</button>
+    </div>
+    <div>
+      <button class="calculatorON" onclick="document.querySelector('.section').style.display = 'grid'; document.querySelector('.calculatorON').style.display = 'none'; document.querySelector('.calculatorOFF').style.display = 'block'; document.querySelector('section').style.borderRadius = '10px'; document.querySelector('section').style.marginLeft = '385px';">
+        <img class="calculator-icon" src="./pictures/Calculator_icon.png">
+      </button>
+    </div>
+    <div>
+      <button class="calculatorOFF" onclick="document.querySelector('.section').style.display = 'none'; document.querySelector('.calculatorON').style.display = 'block'; document.querySelector('.calculatorOFF').style.display = 'none'; document.querySelector('section').style.borderRadius = '10px 0px 10px 10px'; document.querySelector('section').style.marginLeft = '50px';">
+        <img class="calculator-icon" src="./pictures/Calculator_icon.png">
+      </button>
+    </div>
+    <script>
+      let calculation = "";
+    </script>
+  </div>
+</div>
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script type="text/javascript" src="scripts/nav-bar.js"></script>
+</body>
+</html>

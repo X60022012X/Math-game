@@ -1,70 +1,123 @@
-header {
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.navigation {
+	margin-top: 40px;
+  width: 520px;
+  height: 80px;
+  position: relative;
+	background: rgba(197, 195, 195, 0.6);
   display: flex;
   justify-content: center;
-  background-color: #646478;
+  z-index: 1;
+  border-radius: 10px;
 }
 
-nav2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  column-gap: 10vw;
+.navigation ul {
+	position: relative;
+	display: flex;
+	column-gap: 100px;
+  width: 320px;
+	z-index: 1000;
+	z-index: 1000;
+	margin-right: 61px;
 }
 
-nav2 button{
-  padding: 18px 30px 18px 30px;
-  background-color: #646478;
-  font-size: 16px;
-  color: white;
-  border-radius: 0;
-  border: none;
+.navigation ul li {
+	position: relative;
+	list-style: none;
+	width: 80px;
+	height: 80px;
+	z-index: 1;
+}
+
+.navigation ul li a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+}
+
+.navigation ul li a .icon {
+	position: relative;
+	display: block;
+	line-height: 85px;
+	font-size: 1.5em;
+	text-align: center;
+	transition: 0.5s;
+	color: rgba(255,255,255,0.8);
+}
+
+.navigation ul li a:hover .icon {
+	color: rgba(255,255,255,1);
+}
+
+.navigation ul li.active a .icon {
+	transform: translateY(-8px);
+	color: #29fd53;
+}
+
+.navigation ul li a .text {
+	position: absolute;
+	opacity: 0;
+	font-weight: 400;
+	font-size: 0.6em;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	color: #222327;
+	text-transform: uppercase;
+	font-weight: 600;
+	transform: translateY(0px);
+}
+
+.navigation ul li.active a .text{
+	transform: translateY(16px);
+	opacity: 1;
+}
+
+.indicator {
+	position: absolute;
+  width: 80px;
+  height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  border-radius: 10px;
   cursor: pointer;
+	transition: 0.5s;
+	z-index: -1;
 }
 
-nav2 button:active {
-  background-color: rgb(200, 0, 0);
-  color: black;
+.indicator::before {
+  content: '';
+  position: absolute;
+	bottom: 14px;
+	width: 130%;
+	height: 16px;
+  background: #03a9f4;
+	background: #29fd53;
+	border-radius: 10px;
+	margin-right: 58px;
 }
 
-.fa-bars{
-  color: white;
-  font-size: 30px;
-  padding: 12.25px 20px;
-  display: none;
-  cursor: pointer;
+.navigation ul li:nth-child(2).active ~ .indicator {
+	transform: translateX(calc(121px));
 }
 
-@media(max-width: 500px){
+.navigation ul li:nth-child(3).active ~ .indicator {
+	transform: translateX(calc(239px));
+}
 
-  header{
-  flex-direction: column;
-  }
-
-  nav1{
-    display: flex;
-    justify-content: end;
-    border-bottom: 1px solid gray;
-    width: 100%;
-  }
-
-  nav2 {
-    display: none;
-  }
-
-  header nav2.show {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-
-  .fa-bars {
-    display: flex;
-    align-items: center;
-  }
-
-  .fa-bars:active {
-    background-color: rgb(200, 0, 0);
-  }
+.navigation ul li:nth-child(4).active ~ .indicator {
+	transform: translateX(calc(360px));
 }

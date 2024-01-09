@@ -1,8 +1,8 @@
-const burgerEl = document.querySelector(".fa-bars")
-const navEl = document.querySelector("nav2")
-
-burgerEl.addEventListener("click", showNav)
-
-function showNav(){
-  navEl.classList.toggle("show")
-}
+const list = document.querySelectorAll('.list');
+		function activelink(){
+			list.forEach((item) =>
+			item.classList.remove('active'));
+			this.classList.add('active');
+		}
+		list.forEach((item) =>
+		item.addEventListener('click', activelink));

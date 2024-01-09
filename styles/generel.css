@@ -1,51 +1,43 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif
-}
-
 body {
-  background-color: #f4f4f4;
+  background-image: url('../pictures/Background1.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
 section {
+  background: rgba(197, 195, 195, 0.6);
+  padding: 50px;
+  border-radius: 10px 0px 10px 10px;
+  margin-top: 50px;
+  margin-left: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border-bottom: rgb(77, 77, 77) 1px solid;
-}
-
-.title {
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: white;
-}
-
 .regneart {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 60px;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: -15px;
+  margin-bottom: 30px;
 }
 
 .regnestykke {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .answer-line {
   display: flex;
-  flex-direction: row;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .input {
@@ -53,12 +45,15 @@ section {
   padding: 10px;
   margin-right: 10px;
   text-align: center;
+  background-color:  rgba(255, 255, 255, 0.6);
+  border: solid 2px rgb(84, 84, 84);
+  border-radius: 3px;
 }
 
 .sjekk-svar {
   font-size: 18px;
   padding: 10px 20px;
-  background-color: #4cc350;
+  background-color: rgba(76, 195, 80, 0.9);
   color: white;
   cursor: pointer;
   border: rgb(32, 97, 2) solid 2px;
@@ -76,11 +71,20 @@ section {
   border-radius: 3px;
 }
 
+article {
+  display: flex;
+}
+
+colum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .score-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  font-size: 29px;
+  font-weight: 500;
+  margin-top: 50px;
 }
 
 .score {
@@ -88,18 +92,22 @@ section {
   margin-bottom: 16px;
 }
 
+.highscore, .score {
+  font-weight: 500;
+}
+
 .resetHighscore{
   padding: 3px 5px;
   border: 1px black solid;
   border-radius: 3px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .level-title{
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 80px;
-  margin-bottom: 15px;
+  font-size: 29px;
+  font-weight: 500;
+  margin-top: 50px;
 }
 
 .level-container{
@@ -110,11 +118,13 @@ section {
 .level {
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .levelDown, .levelUp{
   border: solid black;
-  padding: 3.8px 2.19px 2.2px 2.19px;
+  padding: 3px 3.8px 2.1px 3.8px;
   border-radius: 15.75px;
 }
 
@@ -122,72 +132,43 @@ section {
   margin-top: 7px;
 }
 
-article{
+.difficulity {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.resetDifficulity {
+  padding: 3px 5px;
+  border: 1px black solid;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+.divider {
+  width: 2px;
+  height: 190px;
+  background-color: rgb(0, 0, 0);
+  margin:60px 70px -30px 70px;
+}
+
+.horizontal-divider {
+  height: 2px;
+  width: 200px;
+  background-color: rgb(0, 0, 0);
+  margin: 10px -10px 15px -10px;
+}
+
+.level-container {
   display: flex;
   flex-direction: row;
-  column-gap: 80px;
-  margin-left: 40px;
 }
 
-colum{
+
+.container {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.divider{
-  background-color: #000000;
-  margin-top: 80px;
-  width: 1px;
-  height: 150px;
-}
-
-@media(max-width: 500px){
-  .answer-line {
-    flex-direction: column;
-    margin-top: 30px;
-  }
-  
-  .input {
-    margin-right: 0px;
-    margin-bottom: 10px;
-  }
-  
-  .sjekk-svar {
-    font-size: 18px;
-    padding: 10px 20px;
-    background-color: #4cc350;
-    color: white;
-    cursor: pointer;
-    border: rgb(32, 97, 2) solid 2px;
-    border-radius: 3px;
-  }
-  
-  .refresh {
-    font-size: 18px;
-    padding: 10px 20px;
-    background-color: #7c7c7c;
-    color: white;
-    cursor: pointer;
-    display: none;
-    border: rgb(73, 73, 73) solid 2px;
-    border-radius: 3px;
-  }
-  
-  article{
-    flex-direction: column;
-    margin-left: 0;
-  }
-
-  .score-title {
-    margin-top: 50px;
-  }
-  
-  .level-title{
-    margin-top: 40px;
-  }
-
-  .divider{
-    display: none;
-  }
+  flex-direction: row;
+  justify-self: start;
 }

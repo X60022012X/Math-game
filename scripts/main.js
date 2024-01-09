@@ -5,11 +5,12 @@ let number2 = 0;
 let number3 = 0;
 let number4 = 0;
 let score = 0;
-let symbol = '*';
+let symbol = '+';
 let svarSjekket = false;
 let level = 1;
 let numberSize = 10;
 let numberAmount = 2;
+let difficulity = 'Practice';
 
 let highscore = 0
 if (!localStorage.highscore){
@@ -48,11 +49,10 @@ function refresh(){
     document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} ${symbol} ${number3} ${symbol} ${number4} = ?`
     console.log('4 tall')
   }
-  document.querySelector('body').style.background = 'white'
-  document.querySelector('.title-box').style.background = 'rgb(100, 100, 120)'
   document.querySelector('input').value = ''
   document.querySelector('.refresh').style.display = 'none'
   document.querySelector('.sjekk-svar').style.display = 'block'
+  document.querySelector('section').style.backgroundColor = 'rgba(197, 195, 195, 0.6)'
   console.log(faktiskSvar)
   svarSjekket = false;
   resetFocus();
@@ -68,7 +68,7 @@ function refresh(){
 }
 
 function resetFocus(){
-  var inputElement = document.querySelector('.input');
+  const inputElement = document.querySelector('.input');
   inputElement.focus();
 }
 
@@ -76,18 +76,16 @@ function resetFocus(){
 function sjekkSvar(){
   brukerSvar = Number(document.querySelector('.input').value);
   if(faktiskSvar === brukerSvar){
-    document.querySelector('body').style.background = 'green'
-    document.querySelector('.title-box').style.background = 'darkgreen'
     document.querySelector('.refresh').style.display = 'block'
     document.querySelector('.sjekk-svar').style.display = 'none'
+    document.querySelector('section').style.backgroundColor = 'rgba(24, 222, 24, 0.6)'
     svarSjekket = true;
     score++;
     updateScore();
   } else {
-    document.querySelector('body').style.background = 'red'
-    document.querySelector('.title-box').style.background = 'rgb(200, 0, 0)'
     document.querySelector('.refresh').style.display = 'block'
     document.querySelector('.sjekk-svar').style.display = 'none'
+    document.querySelector('section').style.backgroundColor = 'rgba(222, 24, 24, 0.6)'
     svarSjekket = true;
     updateHighscore();
     score = 0;
@@ -124,20 +122,27 @@ function checkLevel(){
   if(level === 1){
     numberSize = 10; 
     numberAmount = 2;
+    difficulity = 'Practice';
   }else if(level === 2){
     numberSize = 100;
     numberAmount = 2;
+    difficulity = 'Easy'
   }else if(level === 3){
     numberSize = 10;
     numberAmount = 3;
+    difficulity = 'Normal'
   }else if(level === 4){
     numberSize = 100;
     numberAmount = 3;
+    difficulity = 'Hard'
   }else if(level === 5){
     numberSize = 10;
     numberAmount = 4;
+    difficulity = 'Insane'
   }else if(level === 6){
     numberSize = 100;
     numberAmount = 4;
+    difficulity = 'Extreme'
   }
+  document.querySelector('.difficulity').innerHTML = `Difficulity: ${difficulity}`
 }
