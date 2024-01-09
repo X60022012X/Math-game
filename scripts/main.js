@@ -39,15 +39,12 @@ function refresh(){
   if(numberAmount == 2){
     faktiskSvar = Number((eval(number1 + symbol + number2)).toFixed(1));
     document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} = ?`
-    console.log('2 tall')
   } else if(numberAmount == 3){
     faktiskSvar = Number((eval(number1 + symbol + number2 + symbol + number3)).toFixed(1));
     document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} ${symbol} ${number3} = ?`
-    console.log('3 tall')
   } else if(numberAmount == 4){
     faktiskSvar = Number((eval(number1 + symbol + number2 + symbol + number3 + symbol + number4)).toFixed(1));
     document.querySelector('.regnestykke').innerHTML = `${number1} ${symbol} ${number2} ${symbol} ${number3} ${symbol} ${number4} = ?`
-    console.log('4 tall')
   }
   document.querySelector('input').value = ''
   document.querySelector('.refresh').style.display = 'none'
